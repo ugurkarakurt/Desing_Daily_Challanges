@@ -1,0 +1,61 @@
+@import url(reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@100;300;400;500;700;900&display=swap");
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #303236;
+  font-family: "Muli", sans-serif; }
+
+input {
+  height: 50px;
+  width: 100%;
+  background-color: #303236;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px; }
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.5); }
+
+.component--container {
+  background-color: #3d3f43;
+  border-radius: 5px;
+  padding: 40px 45px; }
+  .component--container form {
+    margin-bottom: 30px;
+    position: relative; }
+    .component--container form .search-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 53px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .component--container form .search-icon svg {
+        height: 2rem;
+        color: rgba(255, 255, 255, 0.5); }
+    .component--container form input {
+      padding-left: 53px; }
+  .component--container h6 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase; }
+  .component--container ul {
+    margin-top: 13px; }
+    .component--container ul li a {
+      display: block;
+      text-decoration: none;
+      font-size: 16px;
+      color: #fff;
+      padding: 7px 00; }
+      .component--container ul li a:hover {
+        color: #2ccdea;
+        font-weight: bold; }
+    .component--container ul li.active a {
+      color: #2ccdea;
+      font-weight: bold; }
+
+/*# sourceMappingURL=style.css.map */
