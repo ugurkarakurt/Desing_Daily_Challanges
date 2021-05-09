@@ -53,7 +53,7 @@ body {
     i {
         font-size: 2em;
     }
-    .fa-moon{
+    .fa-moon {
         cursor: pointer;
         color: #393e46;
     }
@@ -63,6 +63,7 @@ body {
 }
 
 .component--search {
+    box-shadow: 0 15px 25px -20px var(--box-shadow);
     background-color: var(--card-bg-color);
     border-radius: 5px;
     padding: 40px 45px;
@@ -129,6 +130,7 @@ body {
 }
 
 .component--filter-search {
+    box-shadow: 0 15px 25px -20px var(--box-shadow);
     background-color: var(--card-bg-color);
     border-radius: 5px;
     form {

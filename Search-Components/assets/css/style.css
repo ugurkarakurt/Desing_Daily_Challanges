@@ -54,6 +54,7 @@ body {
     color: #ffdf6b; }
 
 .component--search {
+  box-shadow: 0 15px 25px -20px var(--box-shadow);
   background-color: var(--card-bg-color);
   border-radius: 5px;
   padding: 40px 45px; }
@@ -105,6 +106,7 @@ body {
       font-weight: bold; }
 
 .component--filter-search {
+  box-shadow: 0 15px 25px -20px var(--box-shadow);
   background-color: var(--card-bg-color);
   border-radius: 5px; }
   .component--filter-search form {
