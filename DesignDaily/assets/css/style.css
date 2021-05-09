@@ -1,30 +1,66 @@
 @import url(reset.css);
 @import url("https://fonts.googleapis.com/css2?family=Muli:wght@100;300;400;500;700;900&display=swap");
+:root {
+  --background-color: #222831;
+  --card-bg-color: #393e46;
+  --white-text-color: rgba(255, 255, 255, 0.5);
+  --white: #fff;
+  --link-hover-color: #00adb5;
+  --box-shadow: #202125;
+  --btn-bg: linear-gradient(to right, #31a5d9, #00adb5); }
+
+html[data-theme="dark"] {
+  --background-color: #222831;
+  --card-bg-color: #393e46;
+  --white-text-color: rgba(255, 255, 255, 0.5);
+  --white: #fff;
+  --link-hover-color: #00adb5;
+  --box-shadow: #202125;
+  --btn-bg: linear-gradient(to right, #31a5d9, #00adb5); }
+
+html[data-theme="light"] {
+  --background-color: #ffffff;
+  --card-bg-color: #eeeeee;
+  --white-text-color: #222831;
+  --white: #393e46;
+  --link-hover-color: #00adb5;
+  --box-shadow: #202125;
+  --btn-bg: linear-gradient(to right, #31a5d9, #00adb5); }
+
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  transition: all 0.3s ease; }
 
 body {
-  background-color: #303236;
-  font-family: "Muli", sans-serif; }
+  padding: 5rem 2rem;
+  height: 100vh;
+  background-color: var(--background-color);
+  font-family: "Muli", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 10px; }
 
-input {
-  height: 50px;
-  width: 100%;
-  background-color: #303236;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px; }
-  input::placeholder {
-    color: rgba(255, 255, 255, 0.5); }
+.toggle {
+  position: absolute;
+  z-index: 999;
+  top: 1.5rem;
+  right: 2rem; }
+  .toggle i {
+    font-size: 2em; }
+  .toggle .fa-moon {
+    cursor: pointer;
+    color: #393e46; }
+  .toggle .fa-sun {
+    color: #ffdf6b; }
 
-.component--container {
-  background-color: #3d3f43;
+.component--search {
+  background-color: var(--card-bg-color);
   border-radius: 5px;
   padding: 40px 45px; }
-  .component--container form {
+  .component--search form {
     margin-bottom: 30px;
     position: relative; }
-    .component--container form .search-icon {
+    .component--search form .search-icon {
       position: absolute;
       top: 0;
       left: 0;
@@ -33,29 +69,154 @@ input {
       display: flex;
       justify-content: center;
       align-items: center; }
-      .component--container form .search-icon svg {
+      .component--search form .search-icon svg {
         height: 2rem;
-        color: rgba(255, 255, 255, 0.5); }
-    .component--container form input {
-      padding-left: 53px; }
-  .component--container h6 {
+        color: var(--white-text-color); }
+    .component--search form input {
+      padding-left: 53px;
+      height: 50px;
+      width: 100%;
+      background-color: var(--background-color);
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      color: var(--white); }
+      .component--search form input::placeholder {
+        color: var(--white-text-color); }
+      .component--search form input:focus {
+        outline: 0; }
+  .component--search h6 {
     font-size: 12px;
     font-weight: bold;
-    color: #fff;
+    color: var(--white);
     text-transform: uppercase; }
-  .component--container ul {
+  .component--search ul {
     margin-top: 13px; }
-    .component--container ul li a {
+    .component--search ul li a {
       display: block;
       text-decoration: none;
       font-size: 16px;
-      color: #fff;
+      color: var(--white);
       padding: 7px 00; }
-      .component--container ul li a:hover {
-        color: #2ccdea;
-        font-weight: bold; }
-    .component--container ul li.active a {
-      color: #2ccdea;
+      .component--search ul li a:hover {
+        color: var(--link-hover-color); }
+    .component--search ul li.active a {
+      color: var(--link-hover-color);
       font-weight: bold; }
+
+.component--filter-search {
+  background-color: var(--card-bg-color);
+  border-radius: 5px; }
+  .component--filter-search form {
+    padding: 14px;
+    height: 68px;
+    display: flex; }
+    .component--filter-search form .input {
+      display: flex;
+      align-items: center;
+      flex: 1; }
+      .component--filter-search form .input .search-icon {
+        width: 50px;
+        text-align: center; }
+        .component--filter-search form .input .search-icon svg {
+          height: 2rem;
+          color: var(--white-text-color); }
+      .component--filter-search form .input input {
+        background-color: transparent;
+        height: 40px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        color: var(--white); }
+        .component--filter-search form .input input::placeholder {
+          color: var(--white-text-color); }
+        .component--filter-search form .input input:focus {
+          outline: 0; }
+    .component--filter-search form ul {
+      display: flex;
+      margin-left: 15px; }
+      .component--filter-search form ul li label .text {
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        color: var(--white);
+        padding: 0 25px;
+        cursor: pointer;
+        border-radius: 40px; }
+      .component--filter-search form ul li label input {
+        display: none; }
+        .component--filter-search form ul li label input:checked + .text {
+          background-color: var(--background-color);
+          color: var(--link-hover-color); }
+
+.component--filter {
+  background-color: var(--card-bg-color);
+  border-radius: 5px;
+  padding: 40px 45px;
+  box-shadow: 0 15px 25px -20px var(--box-shadow); }
+  .component--filter form ul li {
+    display: flex;
+    align-items: center; }
+    .component--filter form ul li:not(:last-child) {
+      margin-bottom: 20px; }
+    .component--filter form ul li .key {
+      width: 100px;
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--white); }
+    .component--filter form ul li .value {
+      flex: 1; }
+      .component--filter form ul li .value input,
+      .component--filter form ul li .value select {
+        padding: 0 20px;
+        height: 50px;
+        width: 100%;
+        background-color: var(--background-color);
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        color: var(--white); }
+        .component--filter form ul li .value input::placeholder,
+        .component--filter form ul li .value select::placeholder {
+          color: var(--white-text-color); }
+        .component--filter form ul li .value input:focus,
+        .component--filter form ul li .value select:focus {
+          outline: 0; }
+      .component--filter form ul li .value .select-box select {
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("../images/chevron-down-solid.svg");
+        background-repeat: no-repeat;
+        background-position: calc(100% - 25px) center; }
+    .component--filter form ul li.filter-button {
+      margin-top: 40px;
+      border-top: 1px solid var(--background-color);
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .component--filter form ul li.filter-button a {
+        color: var(--white-text-color);
+        text-decoration: none;
+        font-size: 16px; }
+        .component--filter form ul li.filter-button a:hover {
+          color: var(--white); }
+      .component--filter form ul li.filter-button button {
+        cursor: pointer;
+        height: 50px;
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+        background: var(--btn-bg);
+        font-size: 16px;
+        color: var(--white);
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 15px 25px -20px var(--box-shadow); }
+        .component--filter form ul li.filter-button button:hover {
+          text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */

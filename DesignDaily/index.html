@@ -5,13 +5,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <title>Search Components</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <div style="width:377px; margin:25px">
-        <div class="component-search component--container">
+    <div>
+        <div class="component--filter-search">
+            <form action="">
+                <div class="input">
+                    <div class="search-icon">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search"
+                            class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                            </path>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Start typing to search">
+                </div>
+                <ul>
+                    <li>
+                        <label>
+                            <input type="radio" checked name="type" value="project">
+                            <span class="text">Projects</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="type" value="image">
+                            <span class="text">Images</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="type" value="people">
+                            <span class="text">Prople</span>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <div>
+        <div class="component--search">
             <form action="">
                 <div class="search-icon">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search"
@@ -37,7 +78,39 @@
             </ul>
         </div>
     </div>
+    <div>
+        <div class="component--filter">
+            <form action="">
+                <ul>
+                    <li>
+                        <div class="key">Country</div>
+                        <div class="value">
+                            <label class="select-box">
+                                <select name="" id="">
+                                    <option value="">Norway</option>
+                                    <option value="">Turkey</option>
+                                </select>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key">City</div>
+                        <div class="value">
+                            <input type="text" value="Bergen">
+                        </div>
+                    </li>
+                    <li class="filter-button">
+                        <a href="">Cancel</a>
+                        <button type="submit">Apply Filter</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
 
+    </div>
+    <div class="toggle">
+        <i class="far fa-moon"></i>
+    </div>
     <script src="assets/js/app.js"></script>
 </body>
 
